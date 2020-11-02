@@ -1,8 +1,9 @@
 import React from 'react';
-import { Heading } from '@chakra-ui/core';
+import { Heading, Text } from '@chakra-ui/core';
 
 import { OnePagerData } from '../model/model';
 import { ContentCard } from './ContentCard';
+import { Progress } from "@chakra-ui/core";
 
 type OnePagerFinancesProps = {
   onePagerData: OnePagerData;
@@ -28,14 +29,17 @@ export const OnePagerFinances = ({
         Funding Stage: {onePagerData.fundraisingStage}
       </Heading>
       <SubHeading>
-        Fundraising Details: {onePagerData.fundraisingDetails}
-      </SubHeading>
-      <SubHeading>
         Funds Raised: {formatFinanceNumber(onePagerData.fundsRaisedInStage)}
       </SubHeading>
       <SubHeading>
         Funding Goal: {formatFinanceNumber(onePagerData.fundraisingStageGoal)}
       </SubHeading>
+      <SubHeading>
+        Fundraising Details:
+      </SubHeading>
+      <Text fontSize='sm' marginTop='5px'>
+      {onePagerData.fundraisingDetails}
+        </Text>
     </ContentCard>
   );
 };
