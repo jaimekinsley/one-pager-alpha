@@ -23,11 +23,17 @@ export const OnePagerFinances = ({
     .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
   };
 
+  // Calculates the percentage to be used in Progress Bar
+  const valueToPercent = (value: number, max: number) => {
+    return((value) * 100) / (max)
+  }
+
   return (
     <ContentCard title='Finances' isLoading={isLoading}>
       <Heading as='h1' size='lg' marginRight='10px'>
         Funding Stage: {onePagerData.fundraisingStage}
       </Heading>
+      <Progress value={(valueToPercent(onePagerData.fundsRaisedInStage, onePagerData.fundraisingStageGoal))} />
       <SubHeading>
         Funds Raised: {formatFinanceNumber(onePagerData.fundsRaisedInStage)}
       </SubHeading>
