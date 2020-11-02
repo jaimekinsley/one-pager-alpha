@@ -17,7 +17,9 @@ export const OnePagerFinances = ({
   // Format a number to include a dollar sign. This function
   // will be improved as part of task 2.
   const formatFinanceNumber = (financeNumber: number) => {
-    return '$' + `${financeNumber}`.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+    return '$' + `${financeNumber}`
+    .toString()
+    .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
   };
 
   return (
@@ -25,6 +27,9 @@ export const OnePagerFinances = ({
       <Heading as='h1' size='lg' marginRight='10px'>
         Funding Stage: {onePagerData.fundraisingStage}
       </Heading>
+      <SubHeading>
+        Fundraising Details: {onePagerData.fundraisingDetails}
+      </SubHeading>
       <SubHeading>
         Funds Raised: {formatFinanceNumber(onePagerData.fundsRaisedInStage)}
       </SubHeading>
