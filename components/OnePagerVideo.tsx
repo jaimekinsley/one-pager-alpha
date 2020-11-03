@@ -18,20 +18,15 @@ export const OnePagerVideo = ({
     return null;
   }
 
-  // this parses the pitchVideoLink to account for time starts on Spotify video. In practice, it would be better to have all OnePage users submit the Embed link from YouTube that would not require any transformation.
-    const paramsString = onePagerData.pitchVideoLink.split("?")[1];
-    const paramsArray = paramsString.split('&')
-    const paramsKeyValues = paramsArray.map((param) => param.split('='));
-    const paramsObj = paramsKeyValues.reduce((map, prop) => {
-      map[prop[0]] = prop[1];
-      return map;
-    }, {});
-    const videoId = paramsObj['v'];
+  // this parses the pitchVideoLink to account for time start on the Spotify video. In practice, it would be better to have all OnePage users submit the Embed link from YouTube that would not require any transformation.
 
+    let url = new URL(onePagerData.pitchVideoLink);
+    let params = new URLSearchParams(url.search.substring(1));
+    let videoId = params.get('v')
     let timeStart = 0;
-    if(paramsObj['t']){
-      timeStart = paramsObj['t'].slice(0, -1)
-    };
+    if(params.get('t') != null){
+      let timeStart = params.get('t').slice(0, -1)
+  }
 
   return (
     <ContentCard title='Pitch Video' isLoading={isLoading}>
