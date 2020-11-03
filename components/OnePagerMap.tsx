@@ -9,15 +9,30 @@ type OnePagerMapProps = {
   isLoading: boolean;
 };
 
+// interface MyMap {
+//   mapType: google.maps.MapTypeId,
+//   mapTypeControl ?: boolean;
+// }
+
+let map: google.maps.Map;
+
+function initMap(): void {
+  map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
+
 export const OnePagerMap = ({
   onePagerData,
   isLoading,
+  // mapType,
+  // mapTypeControl = false
 }: OnePagerMapProps) => {
 
-
   return (
-    <ContentCard title='Map' isLoading={isLoading}>
-      <h1>Testing</h1>
+    <ContentCard isLoading={isLoading}>
+
     </ContentCard>
   );
 };
