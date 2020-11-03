@@ -21,6 +21,17 @@ export const OnePager = ({ onePagerUrl }: { onePagerUrl: string }) => {
   );
   const [isLoading, setIsLoading]: [boolean, any] = React.useState(false);
 
+  // function to push urls into local storage
+const SaveDataToLocalStorage = (data) => {
+  let array = [];
+  // Parse the serialized onePagerUrl back into an aray of objects
+  array = JSON.parse(localStorage.getItem('visited')) || [];
+  // Push the new data (whether it be an object or anything else) onto the array
+  array.push(data);
+  // Re-serialize the array back into a string and store it in localStorage
+  localStorage.setItem('visited', JSON.stringify(array));
+}
+
   // Load data on first render.
   React.useEffect(() => {
     setIsLoading(true);
@@ -28,26 +39,16 @@ export const OnePager = ({ onePagerUrl }: { onePagerUrl: string }) => {
       setOnePager(result);
       setIsLoading(false);
 
+  // push onePagerUrl into local Storage
+    SaveDataToLocalStorage(onePagerUrl);
 
-// stackoverflow
-// let array = [];
-// array.push(JSON.parse(localStorage.getItem('visited')));
-// localStorage.setItem('visited', JSON.stringify(array));
+    // save local storage to a variable
+    let visitedSites = JSON.parse(localStorage.getItem('visited'));
+    console.log(visitedSites)
 
-const SaveDataToLocalStorage = (data) => {
-    let array = [];
-    // Parse the serialized onePagerUrl back into an aray of objects
-    array = JSON.parse(localStorage.getItem('visited')) || [];
-    // Push the new data (whether it be an object or anything else) onto the array
-    array.push(data);
-    // Re-serialize the array back into a string and store it in localStorage
-    localStorage.setItem('visited', JSON.stringify(array));
-}
+    // start conditional to integrate paywall
+    if(visitedSites.length > 2) console.log('throw up a paywall');
 
-SaveDataToLocalStorage(onePagerUrl);
-
-let visitedSites = JSON.parse(localStorage.getItem('visited'));
-console.log(visitedSites)
 
     });
   }, []);
