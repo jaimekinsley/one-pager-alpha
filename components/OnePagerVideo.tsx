@@ -25,8 +25,6 @@ export const OnePagerVideo = ({
 
   return (
     <ContentCard title='Pitch Video' isLoading={isLoading}>
-      <Heading as='h2' size='md' marginRight='10px'>
-
       <iframe
         width="560"
         height="315"
@@ -34,13 +32,6 @@ export const OnePagerVideo = ({
         frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen>
       </iframe>
-
-        {/* original link */}
-        {/* <a href={onePagerData.pitchVideoLink} target='_blank'>
-          Link to Pitch Video
-        </a> */}
-
-      </Heading>
     </ContentCard>
   );
 };
