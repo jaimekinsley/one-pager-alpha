@@ -23,7 +23,7 @@ export const OnePagerFAQ = ({
 
   return (
     <ContentCard title='FAQs' isLoading={isLoading}>
-      <Accordion allowToggle NumberOrArrayOfNumber={[]}>
+      <Accordion allowToggle>
         <AccordionItem>
           <AccordionHeader>
             <Box flex="1" textAlign="left">

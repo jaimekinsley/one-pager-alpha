@@ -27,4 +27,7 @@ export interface OnePagerData {
   fundraisingDetails?: string;
   pitchVideoLink?: string;
   investors?: OnePagerPerson[];
+  founded: number;
+  revenue: string;
+  employees: string;
 }

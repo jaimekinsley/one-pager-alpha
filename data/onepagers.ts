@@ -9,7 +9,7 @@ export const EMPTY_ONE_PAGER: OnePagerData = {
   industryTags: [],
   briefDescription: '',
   founders: [],
-  founded: '',
+  founded: 0,
   revenue: '',
   employees: '',
 };
