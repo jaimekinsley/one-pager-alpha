@@ -9,6 +9,9 @@ export const EMPTY_ONE_PAGER: OnePagerData = {
   industryTags: [],
   briefDescription: '',
   founders: [],
+  founded: 0,
+  revenue: '',
+  employees: '',
 };
 
 const facebook: OnePagerData = {
@@ -26,6 +29,9 @@ const facebook: OnePagerData = {
   founders: [founders.facebook1, founders.facebook2, founders.facebook3],
   pitchVideoLink: 'https://www.youtube.com/watch?v=WzgNAN3dW-I',
   investors: [investors.investor2],
+  employees: 'Facebook total number of employees in 2019 was 44,942, a 26% increase from 2018.',
+  founded: 2004,
+  revenue: '$70.7 billion'
 };
 
 const lendingClub: OnePagerData = {
@@ -41,6 +47,9 @@ const lendingClub: OnePagerData = {
   fundraisingDetails: 'Expand capabilities and accelerate customer growth',
   founders: [founders.lendingClub1, founders.lendingClub2],
   investors: [investors.investor1],
+  founded: 2007,
+  revenue: '$58.6 million',
+  employees: 'Lending Club total number of employees in 2019 was 1,538, a 13% decrease from 2018.',
 };
 
 const spotify: OnePagerData = {
@@ -57,6 +66,9 @@ const spotify: OnePagerData = {
   founders: [founders.spotify1, founders.spotify2],
   pitchVideoLink: 'https://www.youtube.com/watch?v=ZDXETBfXSuc&t=166s',
   investors: [investors.investor1],
+  founded: 2006,
+  revenue: '$7.9 billion',
+  employees: 'Spotify total number of employees in 2019 was 4,405, a 6% increase from 2018.',
 };
 
 const workday: OnePagerData = {
@@ -72,6 +84,9 @@ const workday: OnePagerData = {
   fundraisingDetails: 'Develop software platform',
   founders: [founders.workday1, founders.workday2],
   investors: [investors.investor1, investors.investor2],
+  founded: 2005,
+  revenue: '$3.6 billion',
+  employees: 'Workday total number of employees in 2019 was 12,400, a 2% increase from 2018.',
 };
 
 const zynga: OnePagerData = {
@@ -88,6 +103,9 @@ const zynga: OnePagerData = {
   founders: [founders.zynga1, founders.zynga2, founders.zynga3],
   pitchVideoLink: 'https://www.youtube.com/watch?v=HdVWHAPiqno',
   investors: [investors.investor1, investors.investor3],
+  founded: 2007,
+  revenue: '$1.3 billion',
+  employees: 'Zynga total number of employees in 2019 was 1,777, a 15% increase from 2018.',
 };
 
 /** Map of urls to full one pager data. */
