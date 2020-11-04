@@ -25,13 +25,12 @@ export const OnePager = ({ onePagerUrl }: { onePagerUrl: string }) => {
 
   const [isPaywall, setIsPaywall]: [boolean, any] = React.useState(false);
 
-
   // function to push urls into local storage
   const SaveDataToLocalStorage = (data) => {
     let array = [];
     // Parse the serialized onePagerUrl back into an aray of objects
     array = JSON.parse(localStorage.getItem('visited')) || [];
-    // Push the new data (whether it be an object or anything else) onto the array
+    // Push the new data onto the array
     array.push(data);
     // Re-serialize the array back into a string and store it in localStorage
     localStorage.setItem('visited', JSON.stringify(array));
@@ -60,12 +59,11 @@ export const OnePager = ({ onePagerUrl }: { onePagerUrl: string }) => {
         console.log(isPaywall);
       }
 
-      // when the user hits 'payment', remove the modal
+      // when the user hits 'payment' button, remove the modal
       // created a new variable in localstorage for hasPaid
       // disable the visitedSites conditional if hasPaid is true
 
-      // refactor if statement to account for duplicates in the visitedSites array
-
+      // refactor if statement to account for duplicate values in the visitedSites array
     });
   }, []);
 
