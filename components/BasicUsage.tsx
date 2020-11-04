@@ -15,6 +15,7 @@ export const BasicUsage = () => {
 
   return (
     <>
+    {/* Commented out button because I wanted it to render the modal as open without a click */}
       {/* <Button onClick={onOpen}>Open Modal</Button> */}
 
       <Modal isOpen={isOpen} onClose={onClose}>
